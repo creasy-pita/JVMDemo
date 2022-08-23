@@ -30,7 +30,7 @@ public class OperandStackTest {
 
     public void testGetSum2(){
         int m = 300;
-        int i = getSum();
+        int i = this.getSum();
         int j = 10;
     }
     /*
