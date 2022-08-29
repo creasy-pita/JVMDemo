@@ -15,7 +15,8 @@ import org.junit.Test;
  */
 public class StringIntern {
     public static void main(String[] args) {
-
+        String p = "s";
+        String q = "s";
         String s = new String("1");
         s.intern();//调用此方法之前，字符串常量池中已经存在了"1"
         String s2 = "1";
@@ -28,6 +29,10 @@ public class StringIntern {
                                             //         jdk7:此时常量中并没有创建"11",而是创建一个指向堆空间中new String("11")的地址
         String s4 = "11";//s4变量记录的地址：使用的是上一行代码代码执行时，在常量池中生成的"11"的地址
         System.out.println(s3 == s4);//jdk6：false  jdk7/8：true
+    }
+
+    public void test(){
+        String s = new String("1");
     }
 
 

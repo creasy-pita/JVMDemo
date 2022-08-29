@@ -112,6 +112,19 @@ public class StringTest5 {
         System.out.println("花费的时间为：" + (end - start));
     }
 
+    /**
+     * 验证s1.intern对s1引用地址，以及char[] value或者 byte[] value引用地址的影响
+     */
+
+    @Test
+    public void test7(){
+        String s1 = new String("a");
+        String s2 = s1.intern();
+        String s3 = "a";
+
+        System.out.println(s1 == s3);//true
+    }
+
     public void method1(int highLevel){
         String src = "";
         for(int i = 0;i < highLevel;i++){
