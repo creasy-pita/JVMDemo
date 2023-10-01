@@ -14,11 +14,16 @@ package com.atguigu.java2;
  *  对象3： 常量池中的"a"
  *  对象4： new String("b")
  *  对象5： 常量池中的"b"
- *
+
  *  深入剖析： StringBuilder的toString():
  *      对象6 ：new String("ab")
  *       强调一下，toString()的调用，在字符串常量池中，没有生成"ab"
- *
+ *  其中 new String("a") 先在常量池中创建“a”字符串对象，然后在堆中创建String对象，把“a”字符串对象中的char[] values属性赋给String对象的char[] values属性
+ *      private final char value[];
+ *      public String(String original) {
+ *         this.value = original.value;
+ *         this.hash = original.hash;
+ *     }
  * @author shkstart  shkstart@126.com
  * @create 2020  20:38
  */
